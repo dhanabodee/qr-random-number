@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>สุ่มตัวเลข</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #fff;
+      font-family: sans-serif;
+    }
+    .number {
+      font-size: 10rem;
+      color: #007acc;
+    }
+  </style>
+</head>
+<body>
+  <div class="number" id="num">–</div>
+  <script>
+    const pool = [];
+    [1,2,3,4,6,7,8,9].forEach(n => { for(let i=0;i<11;i++) pool.push(n); });
+    for(let i=0;i<12;i++) pool.push(5);
+    pool.sort(() => Math.random()-0.5);
+    document.getElementById('num').textContent = pool[Math.floor(Math.random()*pool.length)];
+  </script>
+</body>
+</html>
